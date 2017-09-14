@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <Toolbar
+
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/orange">
+    </Toolbar>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="?attr/actionBarSize"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="13dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/wenxues"/>
+                    <TextView
+                        android:text="书籍"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/s"/>
+                    <TextView
+                        android:text="计算机"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+
+                        android:layout_width="88dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/baozhis"/>
+                    <TextView
+                        android:text="报纸"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/others"/>
+                    <TextView
+                        android:text="其他"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+</RelativeLayout>

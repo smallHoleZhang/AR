@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/cancel_dialog"
+        android:layout_marginRight="10dp">
+
+        <Button
+            android:id="@+id/upload_cancel_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/cancel"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/cancel_dialog"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:id="@+id/upload_photo"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/upload_photo_imageView"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_photo_tag"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="上传照片"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:id="@+id/upload_video"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/upload_video_imageView"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_video_tag"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="上传视频"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

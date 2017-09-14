@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dp"
+    android:layout_height="90dp">
+
+    <ImageView
+        android:id="@+id/upload_tupian_imageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop" />
+
+    <CheckBox
+        android:id="@+id/upload_tupian_checkBox"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_tupian_delete"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:button="@null"/>
+</RelativeLayout>

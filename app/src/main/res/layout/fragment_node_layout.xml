@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/sddsdsd">
+
+                <ImageView
+                    android:id="@+id/backornd_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/general_button"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/s1"
+                            tools:ignore="HardcodedText"/>
+
+                        <EditText
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            style="@style/MyEditText"
+                            android:drawableLeft="@drawable/ss2"
+                            />
+
+                        <Button
+                            android:id="@+id/barrage_button"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/barrage"
+                            tools:ignore="HardcodedText"/>
+
+                </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+                <Button
+                    android:text="通用文字识别"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/general_button2"
+                    tools:ignore="HardcodedText"/>
+                <Button
+                    android:text="通用文字识别基础版"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/general_basic_button"
+                    tools:ignore="HardcodedText"/>
+                <Button
+                    android:text="通用文字识别含生僻字版"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/general_enhance_button"
+                    tools:ignore="HardcodedText"/>
+                <Button
+                    android:text="网络图片文字识别"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/general_webimage_button"
+                    tools:ignore="HardcodedText"/>
+                <Button
+                    android:text="身份证"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idcard_button"
+                    tools:ignore="HardcodedText"/>
+
+                <Button android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bankcard_button"
+                        android:text="银行卡"
+                        tools:ignore="HardcodedText"/>
+                <EditText
+                    android:id="@+id/ocr_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <!--<Button-->
+                <!--android:id="@+id/id_card_front_button"-->
+                <!--android:text="身份证正面"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--tools:ignore="HardcodedText"/>-->
+
+                <!--<Button-->
+                <!--android:id="@+id/id_card_back_button"-->
+                <!--android:text="身份证背面"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--tools:ignore="HardcodedText"/>-->
+
+                <!--<Button-->
+                <!--android:id="@+id/bank_card_button"-->
+                <!--android:text="银行卡"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--tools:ignore="HardcodedText"/>-->
+
+                <!--<Button-->
+                <!--android:id="@+id/general_button"-->
+                <!--android:text="通用识别"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--tools:ignore="HardcodedText"/>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/preview_image_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/orc_list_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+</LinearLayout>

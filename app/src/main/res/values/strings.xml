@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Competition_FIVE</string>
+    <!--OCR-->
+    <string name="idCardLabel">身份证识别</string>
+    <string name="bankCardLabel">银行卡识别</string>
+    <string name="generalLabel">通用文字识别</string>
+    <string name="quxiao">取消</string>
+    <string name="确认">确认</string>
+
+
+    <!--upload_dialog界面-->
+    <string name="upload_take_photo">拍照</string>
+    <string name="upload_choose_photo">从手机选择</string>
+    <string name="cancel">取消</string>
+
+    <drawable name="textView_pressed">#FFB2B3B6</drawable>
+    <drawable name="textView_normal">#FFF7F8FD</drawable>
+
+
+    <!--上传图片界面-->
+    <string name="add_label">添加标签</string>
+</resources>
