@@ -13,7 +13,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,9 +100,6 @@ public class NodeFragment extends Fragment {
 
     private RecyclerView ocr_list_recyclerview;
     private OcrRecycViewAdapter ocrRecycViewAdapter;
-
-    private static final String TAG = "NodeFragment";
-
     private static NodeFragment nodeFragment = new NodeFragment();
     public static Fragment newInstance(){
 
@@ -111,13 +107,13 @@ public class NodeFragment extends Fragment {
     }
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_node_layout,container,false);
         mInflater = LayoutInflater.from(getActivity());
         alertDialog = new AlertDialog.Builder(getActivity());
         orc_content =  (EditText)view.findViewById(R.id.ocr_content);
         dialog = new AlertDialog.Builder(getActivity());
-       ocr_list_recyclerview = (RecyclerView) view.findViewById(R.id.orc_list_recyclerview);
+        ocr_list_recyclerview = (RecyclerView) view.findViewById(R.id.orc_list_recyclerview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         ocr_list_recyclerview.setLayoutManager(linearLayoutManager);
         if(mOcrLists.size()==0)
@@ -129,7 +125,7 @@ public class NodeFragment extends Fragment {
         ocrRecycViewAdapter.setOnItemClickLitsener(new OcrRecycViewAdapter.OnItemClickListenr() {
             @Override
             public void onItemClick(View view, int position,OcrList ocrList) {
-               Intent intent = new Intent(getActivity(), NodeContextActivity.class);
+                Intent intent = new Intent(getActivity(), NodeContextActivity.class);
                 user_0crList = ocrList;
                 startActivity(intent);
 
@@ -245,7 +241,7 @@ public class NodeFragment extends Fragment {
 
                     Intent intent = new Intent(getContext(), BarrageActivity.class);
                     intent.putExtra("ocr_content",ocr_getContent);
-                    Log.d(TAG, "onClick: content = "+ocr_getContent);
+                    L.d("onClick: content = "+ocr_getContent);
                     startActivity(intent);
                 }
             }
@@ -262,27 +258,27 @@ public class NodeFragment extends Fragment {
     private void initList() {
       /*  ArrayList<OcrList> arry = new ArrayList<>();
         ArrayList<String> arrys = new ArrayList<>();*/
-            AVQuery<OcrList> query = AVQuery.getQuery(OcrList.class);
+        AVQuery<OcrList> query = AVQuery.getQuery(OcrList.class);
         L.d(AVUser.getCurrentUser().getObjectId());
-                               query.whereEqualTo("userId",AVObject.createWithoutData("_User", AVUser.getCurrentUser().getObjectId()));
-                               query.findInBackground(new FindCallback<OcrList>() {
-                                   @Override
-                                   public void done(List<OcrList> list, AVException e) {
-                                       if(e == null)
-                                       {
-                                           L.d("123");
-                                           for(OcrList a :list)
-                                           {
-                                                mOcrLists.add(a);
-                                               spinner_list.add(a.getList_name());
-                                               ocrRecycViewAdapter.notifyDataSetChanged();
+        query.whereEqualTo("userId",AVObject.createWithoutData("_User", AVUser.getCurrentUser().getObjectId()));
+        query.findInBackground(new FindCallback<OcrList>() {
+            @Override
+            public void done(List<OcrList> list, AVException e) {
+                if(e == null)
+                {
+                    L.d("123");
+                    for(OcrList a :list)
+                    {
+                        mOcrLists.add(a);
+                        spinner_list.add(a.getList_name());
+                        ocrRecycViewAdapter.notifyDataSetChanged();
 
-                                           }
-                                       }else {
-                                           L.d("失败");
-                                       }
-                                   }
-                               });
+                    }
+                }else {
+                    L.d("失败");
+                }
+            }
+        });
 
 
 
@@ -457,64 +453,66 @@ public class NodeFragment extends Fragment {
 
         dialog.setMessage("                              保存")
                 .setView(dialogview);
-               dialog .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String context = spinner_add_item.getText().toString();
-                        //判断添加想是否为空
-                        String text = materialEditText.getText().toString();
-                        ocr_getContent = text;
-                        if(!context.equals(""))
-                        {
-                            spinner_adapter.add(context);
-                            final OcrList ocrlist = new OcrList();
-                            ocrlist.setList_name(context);
-                            ocrlist.setUserId(AVUser.getCurrentUser().getObjectId());
-                            ocrlist.AddArraylist(text);
-                            ocrlist.saveInBackground(new SaveCallback() {
-                                @Override
-                                public void done(AVException e) {
-                                    if (e == null){
-                                        L.d("SuccessSS" +  ocrlist.getObjectId());
-                                        String id;
-                                        id =ocrlist.getObjectId() ;
-                                        SetId(ocrlist,id);
+        dialog .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String context = spinner_add_item.getText().toString();
+                //判断添加想是否为空
+                String text = materialEditText.getText().toString();
 
-                                    }else {
-                                        L.d("failed"+e.toString());
-                                    }
-                                }
-                            });
-                            mOcrLists.add(ocrlist);
-                            content= new StringBuilder();
-                            int position = spinner_adapter.getPosition(context);
-                            spinner_ocr_list.setSelection(position);
-                            //清空用于输入的EditText
-                            context = "";
-                            spinner_add_item.setText("");
-                            spinnertext = "";
-                        }
+                ocr_getContent = text;
 
-                        for(int i = 0;i < spinner_adapter.getCount();i++)
-                        {
-                            if(context.equals(spinner_adapter.getItem(i)))
-                            {
-                              return;
+                if(!context.equals(""))
+                {
+                    spinner_adapter.add(context);
+                    final OcrList ocrlist = new OcrList();
+                    ocrlist.setList_name(context);
+                    ocrlist.setUserId(AVUser.getCurrentUser().getObjectId());
+                    ocrlist.AddArraylist(text);
+                    ocrlist.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(AVException e) {
+                            if (e == null){
+                                L.d("SuccessSS" +  ocrlist.getObjectId());
+                                String id;
+                                id =ocrlist.getObjectId() ;
+                                SetId(ocrlist,id);
+
+                            }else {
+                                L.d("failed"+e.toString());
                             }
-
                         }
-                        for (int i = 0;i < mOcrLists.size();i++)
-                        {
-                            if(spinnertext.equals(mOcrLists.get(i).getList_name()))
-                            {
-                                 OcrList ocrList = new OcrList();
-                                mOcrLists.get(i).AddArraylist(text);
-                                ocrList.setObjectId(mOcrLists.get(i).getId());
-                                L.d("m33"+mOcrLists.get(i).getId());
-                                L.d("m33"+mOcrLists.get(i).getList_name());
-                                L.d("m33"+mOcrLists.get(i).getArrayList());
-                                ocrList.setArrayList((ArrayList<String>) mOcrLists.get(i).getArrayList());
-                                ocrList.saveInBackground();
+                    });
+                    mOcrLists.add(ocrlist);
+                    content= new StringBuilder();
+                    int position = spinner_adapter.getPosition(context);
+                    spinner_ocr_list.setSelection(position);
+                    //清空用于输入的EditText
+                    context = "";
+                    spinner_add_item.setText("");
+                    spinnertext = "";
+                }
+
+                for(int i = 0;i < spinner_adapter.getCount();i++)
+                {
+                    if(context.equals(spinner_adapter.getItem(i)))
+                    {
+                        return;
+                    }
+
+                }
+                for (int i = 0;i < mOcrLists.size();i++)
+                {
+                    if(spinnertext.equals(mOcrLists.get(i).getList_name()))
+                    {
+                        OcrList ocrList = new OcrList();
+                        mOcrLists.get(i).AddArraylist(text);
+                        ocrList.setObjectId(mOcrLists.get(i).getId());
+                        L.d("m33"+mOcrLists.get(i).getId());
+                        L.d("m33"+mOcrLists.get(i).getList_name());
+                        L.d("m33"+mOcrLists.get(i).getArrayList());
+                        ocrList.setArrayList((ArrayList<String>) mOcrLists.get(i).getArrayList());
+                        ocrList.saveInBackground();
                             /*    AVQuery<OcrList> query = AVQuery.getQuery(OcrList.class);
                                query.findInBackground(new FindCallback<OcrList>() {
                                    @Override
@@ -528,20 +526,20 @@ public class NodeFragment extends Fragment {
                                        }
                                    }
                                });*/
-                                content= new StringBuilder();
-                            }
-                        }
-
-
-                        spinner_ocr_list.setVisibility(View.VISIBLE);
-                        spinner_add_item.setVisibility(View.GONE);
-                        spinner_add_button.setVisibility(View.VISIBLE);
-                        finish_button.setVisibility(View.GONE);
-                        ocrRecycViewAdapter.notifyDataSetChanged();
                         content= new StringBuilder();
-
                     }
-                });
+                }
+
+
+                spinner_ocr_list.setVisibility(View.VISIBLE);
+                spinner_add_item.setVisibility(View.GONE);
+                spinner_add_button.setVisibility(View.VISIBLE);
+                finish_button.setVisibility(View.GONE);
+                ocrRecycViewAdapter.notifyDataSetChanged();
+                content= new StringBuilder();
+
+            }
+        });
         dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

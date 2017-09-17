@@ -21,7 +21,7 @@ public class OcrList extends AVObject implements Serializable {
     }
 
     public void setId(String id) {
-       put("id",id);
+        put("id",id);
     }
 
     private String list_name;

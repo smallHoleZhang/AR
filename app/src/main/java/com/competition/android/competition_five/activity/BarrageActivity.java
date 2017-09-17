@@ -2,6 +2,8 @@ package com.competition.android.competition_five.activity;
 
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -78,6 +80,22 @@ public class BarrageActivity extends AppCompatActivity {
     private OkHttpClient mClient;
     public volatile static String mAccess_token;
 
+
+    private static final int BARRAGE_START = 1;
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+
+            if (msg.arg1==BARRAGE_START){
+                for (final String s : barrages) {
+                    addDanmaku(s,false);
+
+                }
+            }
+
+        }
+    };
 
     
     @Override
@@ -255,6 +273,8 @@ public class BarrageActivity extends AppCompatActivity {
                                     .post(body)
                                     .build();
 
+
+
                             mClient.newCall(request).enqueue(new Callback() {
                                 @Override
                                 public void onFailure(Call call, IOException e) {
@@ -265,6 +285,12 @@ public class BarrageActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onResponse(Call call, Response response) throws IOException {
+
+                                    try {
+                                        Thread.currentThread().sleep(500);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
 
                                     double similar ;
 
@@ -314,24 +340,9 @@ public class BarrageActivity extends AppCompatActivity {
 
                                                         }
 
-
-                                                        for (final String s : barrages) {
-
-                                                            new Thread(new Runnable() {
-                                                                @Override
-                                                                public void run() {
-                                                                    addDanmaku(s,false);
-
-                                                                    try {
-                                                                        Thread.sleep(500);
-                                                                    } catch (InterruptedException e) {
-                                                                        e.printStackTrace();
-                                                                    }
-                                                                }
-                                                            }).start();
-
-
-                                                        }
+                                                        Message msg = new Message();
+                                                        msg.arg1 = BARRAGE_START;
+                                                        mHandler.sendMessage(msg);
 
                                                     }
                                                 });
@@ -369,8 +380,6 @@ public class BarrageActivity extends AppCompatActivity {
 
             });
         }
-
-
 
     }
 
