@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.competition.android.competition_five.R;
-import com.competition.android.competition_five.javaBean.TuPian;
+import com.competition.android.competition_five.Entity.TuPian;
 
 
 /**

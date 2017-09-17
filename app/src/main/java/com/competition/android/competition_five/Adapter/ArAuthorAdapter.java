@@ -1,17 +1,15 @@
 package com.competition.android.competition_five.Adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.competition.android.competition_five.Adapter.Base.BaseViewHolder;
 import com.competition.android.competition_five.Adapter.Base.SimpleAdapter;
 import com.competition.android.competition_five.R;
-import com.competition.android.competition_five.javaBean.UploadContent;
+import com.competition.android.competition_five.Entity.UploadContent;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Vincent on 2017/9/3.

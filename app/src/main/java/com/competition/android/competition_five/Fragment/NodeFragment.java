@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,6 +81,8 @@ public class NodeFragment extends Fragment {
     //得到的结果
     private StringBuilder content = new StringBuilder();
 
+    private String ocr_getContent;//保存修改后的文字
+
     private LayoutInflater mInflater;
 
 
@@ -98,6 +101,9 @@ public class NodeFragment extends Fragment {
 
     private RecyclerView ocr_list_recyclerview;
     private OcrRecycViewAdapter ocrRecycViewAdapter;
+
+    private static final String TAG = "NodeFragment";
+
     private static NodeFragment nodeFragment = new NodeFragment();
     public static Fragment newInstance(){
 
@@ -105,7 +111,7 @@ public class NodeFragment extends Fragment {
     }
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_node_layout,container,false);
         mInflater = LayoutInflater.from(getActivity());
         alertDialog = new AlertDialog.Builder(getActivity());
@@ -238,7 +244,8 @@ public class NodeFragment extends Fragment {
                 } else {
 
                     Intent intent = new Intent(getContext(), BarrageActivity.class);
-
+                    intent.putExtra("ocr_content",ocr_getContent);
+                    Log.d(TAG, "onClick: content = "+ocr_getContent);
                     startActivity(intent);
                 }
             }
@@ -456,7 +463,7 @@ public class NodeFragment extends Fragment {
                         String context = spinner_add_item.getText().toString();
                         //判断添加想是否为空
                         String text = materialEditText.getText().toString();
-
+                        ocr_getContent = text;
                         if(!context.equals(""))
                         {
                             spinner_adapter.add(context);

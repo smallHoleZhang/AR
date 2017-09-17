@@ -8,12 +8,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.competition.android.competition_five.Adapter.ArAuthorAdapter;
 import com.competition.android.competition_five.Adapter.Base.BaseAdapter;
@@ -22,8 +22,7 @@ import com.competition.android.competition_five.Uilt.OpenUile;
 import com.competition.android.competition_five.Uilt.UploadDialog;
 import com.competition.android.competition_five.activity.ar.ArItemShow;
 import com.competition.android.competition_five.activity.ar.UploadShiPin;
-import com.competition.android.competition_five.activity.ar.UploadTuPian;
-import com.competition.android.competition_five.javaBean.UploadContent;
+import com.competition.android.competition_five.Entity.UploadContent;
 /*import com.hiar.sdk.UnityPlayerNativeActivity;*/
 
 import java.util.ArrayList;
@@ -46,6 +45,8 @@ public class ArFragment extends Fragment implements View.OnClickListener{
     private UploadDialog mDialog;
 
     private Intent mIntent;
+
+    private static final String TAG = "ArFragment";
 
     public static Fragment newInstance(){
         ArFragment arFragment = new ArFragment();
@@ -83,6 +84,8 @@ public class ArFragment extends Fragment implements View.OnClickListener{
             @Override
             public void OnClick(View view, int position) {
                 UploadContent uploadContent = mData.get(position);
+
+                Log.d(TAG, "OnClick: "+uploadContent.getContent());
 
                 Intent intent = new Intent(getContext(), ArItemShow.class);
                 intent.putExtra("title",uploadContent.getContent());
@@ -136,9 +139,9 @@ public class ArFragment extends Fragment implements View.OnClickListener{
                 getDialog();
                 break;
             case R.id.upload_photo:
-                mIntent = new Intent(getContext(), com.hiar.sdk.UnityPlayerNativeActivity.class);
+             /*   mIntent = new Intent(getContext(), .class);
                 startActivity(mIntent);
-                mDialog.cancel_dialog();
+                mDialog.cancel_dialog();*/
                 break;
             case R.id.upload_video:
                 mIntent = new Intent(getContext(), UploadShiPin.class);

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\AndroidQWZN\\Ar_texts\\ocr_ui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "outputFile": "D:\\cxnr\\Android\\Ar_texts\\ocr_ui\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "C:\\Users\\hasee\\.android\\build-cache\\bf9ccbf7545d740fd60f295db0867c07d281f5ef\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "file": "C:\\Users\\lx\\.android\\build-cache\\dd591e6ebbe862b48c576db816e46cfca3e3cab6\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

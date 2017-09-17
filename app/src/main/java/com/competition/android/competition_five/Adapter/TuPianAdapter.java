@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.competition.android.competition_five.Adapter.Base.BaseViewHolder;
 import com.competition.android.competition_five.Adapter.Base.SimpleAdapter;
 import com.competition.android.competition_five.R;
-import com.competition.android.competition_five.javaBean.TuPian;
+import com.competition.android.competition_five.Entity.TuPian;
 
 import java.util.List;
 

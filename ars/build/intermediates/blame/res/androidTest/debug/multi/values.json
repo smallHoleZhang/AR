@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\AndroidQWZN\\Ar_texts\\ars\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "D:\\cxnr\\Android\\Ar_texts\\ars\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "D:\\AndroidQWZN\\Ar_texts\\ars\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "D:\\cxnr\\Android\\Ar_texts\\ars\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -31,7 +31,7 @@
                     "endOffset": 192
                 },
                 "from": {
-                    "file": "D:\\AndroidQWZN\\Ar_texts\\ars\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "D:\\cxnr\\Android\\Ar_texts\\ars\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,

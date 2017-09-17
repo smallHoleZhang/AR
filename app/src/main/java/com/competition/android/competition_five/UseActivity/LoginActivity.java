@@ -16,26 +16,30 @@ import com.competition.android.competition_five.Entity.User;
 import com.competition.android.competition_five.HomepageActivity;
 import com.competition.android.competition_five.R;
 import com.competition.android.competition_five.Uilt.L;
+import com.competition.android.competition_five.Uilt.OpenUile;
+import com.competition.android.competition_five.tables.BarrageTable;
 
 /**
  * Created by hasee on 2017/8/20.
  */
 
 public class LoginActivity extends AppCompatActivity {
-        private EditText username;
-        private EditText password;
-        private Button  goin;
-        private Button  sgin;
-        private Button  gout;
+    private EditText username;
+    private EditText password;
+    private Button  login;
+    private Button  sgin;
 
 
 
-        private String user;
+
+    private String user;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_layout);
+        OpenUile.setPrimaryDark(this, R.color.darkblue);
         initView();
+
        /* AVObject testObject = new AVObject("TestObject");
         testObject.put("words","Hello World");
         testObject.saveInBackground(new SaveCallback() {
@@ -72,6 +76,8 @@ public class LoginActivity extends AppCompatActivity {
     private void LogIn() {
         String pass = password.getText().toString();
         user = username.getText().toString();
+        user = "zyc";
+        pass ="123";
         AVUser.logInInBackground(user, pass, new LogInCallback<AVUser>() {
             @Override
             public void done(AVUser avUser, AVException e) {
@@ -89,17 +95,17 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initView() {
         username = (EditText) findViewById(R.id.loginactivity_username);
+
         password = (EditText) findViewById(R.id.loginactivity_password);
-        goin = (Button) findViewById(R.id.loginactiviy_gonin);
-        sgin = (Button) findViewById(R.id.sign_in);
-        gout = (Button) findViewById(R.id.go_out);
-        sgin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SgIn();
-            }
-        });
-        goin.setOnClickListener(new View.OnClickListener() {
+        login = (Button) findViewById(R.id.login_button);
+//        sgin = (Button) findViewById(R.id.sign_in);
+//        sgin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SgIn();
+//            }
+//        });
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LogIn();

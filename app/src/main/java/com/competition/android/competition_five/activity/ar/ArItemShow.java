@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,25 +16,20 @@ import com.competition.android.competition_five.R;
  * Created by Vincent on 2017/9/8.
  */
 
-public class ArItemShow extends BaseActivity implements View.OnClickListener{
+public class ArItemShow extends AppCompatActivity implements View.OnClickListener{
 
     private ImageButton mBack;
 
     private TextView mTitle;
 
-    @Override
-    protected Fragment createFragment() {
-        return null;
-    }
+    private static final String TAG = "ArItemShow";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_ar_item_show);
 
-
         String title = getIntent().getStringExtra("title");
-
 
         mBack = (ImageButton) this.findViewById(R.id.back_btn);
 

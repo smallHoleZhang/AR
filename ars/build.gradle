@@ -8,6 +8,7 @@ android {
        /* applicationId "com.hiar.sdk"*/
         minSdkVersion 15
         targetSdkVersion 21
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -16,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    packageBuildConfig(false)
 }
 
 dependencies {

@@ -30,7 +30,7 @@ import com.competition.android.competition_five.Adapter.TuPianAdapter;
 import com.competition.android.competition_five.R;
 import com.competition.android.competition_five.Uilt.GetPhotoFromAlbum;
 import com.competition.android.competition_five.Uilt.PhotoDialog;
-import com.competition.android.competition_five.javaBean.TuPian;
+import com.competition.android.competition_five.Entity.TuPian;
 
 import java.io.File;
 import java.io.FileNotFoundException;

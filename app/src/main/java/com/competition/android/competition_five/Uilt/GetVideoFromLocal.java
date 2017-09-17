@@ -15,7 +15,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 
-import com.competition.android.competition_five.javaBean.ShiPin;
+import com.competition.android.competition_five.Entity.ShiPin;
 
 import java.util.HashMap;
 

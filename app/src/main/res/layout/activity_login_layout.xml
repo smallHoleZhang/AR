@@ -2,57 +2,106 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/darkblue"
               android:orientation="vertical">
 
-    
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="113dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/yunss"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="纸悦动"
+        android:textColor="@color/gainsboros"
+        android:textSize="18dp"/>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/loginactivity_username"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/xf8"/>
 
 
-
-
-
-
-
-
-
-
-
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/loginactivity_username"
-                android:text="zyc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <EditText
-            android:id="@+id/loginactivity_password"
-            android:text="123"
+        <EditText
+            android:id="@+id/loginactivity_username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="22dp"
+            android:hint="  Username"
+            android:textColor="@color/gainsboro"
+            android:textColorHint="@color/gainsboro"
+            android:textSize="22dp"/>
 
-            <Button
-                android:id="@+id/sign_in"
-                android:text="注册"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/go_out"
-        android:text="退出"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/loginactiviy_gonin"
-        android:text="登录"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/loginactivity_password"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/suo5"/>
+
+        <EditText
+            android:id="@+id/loginactivity_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="22dp"
+            android:hint="  Password"
+            android:textColor="@color/gainsboro"
+            android:textColorHint="@color/gainsboro"
+            android:textSize="22dp"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/color_button"
+        android:text="LOG   In"
+        android:textColor="@color/floralwhite"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Forget password"
+        android:textColor="@color/gainsboros"
+        android:textSize="18dp"/>
 
 
 </LinearLayout>

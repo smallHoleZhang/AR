@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#000000" />
+    <corners android:topLeftRadius="10dp"
+             android:topRightRadius="10dp"
+             android:bottomRightRadius="10dp"
+             android:bottomLeftRadius="10dp"/>
+    <!--
+       startColor : 设置渐变颜色的开始值
+       endColor: 设置渐变颜色的结束值
+
+       angle : 设置渐变的角度
+           90 ：从下往上开始渐变
+           0 ：从左往右开始渐变
+    -->
+    <gradient
+        android:startColor="@color/plum"
+        android:endColor="@color/rosybrown"
+        android:angle="0"
+        />
+
+</shape>
